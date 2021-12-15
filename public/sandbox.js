@@ -124,3 +124,30 @@ console.log(zebra);
 //any in object
 //any type
 console.log("tsconfig.json");
+//function and function type
+let plus = () => {
+};
+// plus = "string";
+let fun;
+// fun = "sfdsf";
+//number type
+//optional parameter
+const calculate = (a, b, c) => {
+    console.log(c);
+    return a + b;
+};
+//optional parameter
+let result = calculate(10, 5, "hello");
+//number type
+// result = "rsd";
+result = 14;
+//void type
+//default parameter
+const minus = (a, b, c = "number is not exist") => {
+    console.log(c);
+    console.log(a - b);
+};
+//default parameter
+minus(10, 6, "found");
+//void type
+//function and function type

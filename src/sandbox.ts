@@ -1,124 +1,196 @@
 //compile
-var character = "armin";
+let character : string = "armin";
+
 console.log(character);
-var inputs = document.querySelectorAll('input');
-inputs.forEach(function (input) {
-    console.log(input);
+
+const inputs = document.querySelectorAll('input');
+
+inputs.forEach(input => {
+  console.log(input);
 });
+
 //compile
+
+
 //argoumant and parameters in function
-var calc = function (num) {
-    return num * num;
-};
+const calc = (num : number) =>{
+  return num * num;
+}
 console.log(calc(5));
 //argoumant and parameters in function
+
+
 //varibales and rule for asigning value to them
-var students = ["armin", "matin", "rading"];
+
+
+let students = ["armin", "matin", "rading"];
 // students[0] = 0;
 students[0] = "reza";
 students.push("mamd");
-var numbers = [20, 17, 15, 19];
+
+let numbers = [20 ,17, 15, 19];
 numbers.push(10);
-var mixArray = [0, "mnamda", { name: "armin" }, false];
+
+let mixArray = [0, "mnamda", { name: "armin" }, false];
+
 mixArray.push(5);
 mixArray.push("asdsa");
 mixArray.push(true);
-var person = {
-    name: "ali",
-    age: 14,
-    family: "zandi"
-};
+
+let person = {
+  name: "ali",
+  age: 14,
+  family: "zandi",
+}
+
 person.name = "sadegh";
 // person.name = 15;
 person.age = 16;
 // person.age = "adf" 
 // person.skill = ["react", "vue"];
+
 person = {
-    name: "reza",
-    age: 20,
-    family: "rahimi"
-};
+  name: "reza",
+  age: 20,
+  family: "rahimi"
+}
+
 // person = {
 //   name: "reza",
 //   age: 20,
 // }
+
 // person = {
 //   name: "reza",
 //   age: "asd",
 //   family: 12,
 // }
+
 // person = {
 //   name: "reza",
 //   age: 20,
 //   family: "rahimi",
 //   skills: ['react', 'vue'],
 // }
+
 //varibales and rule for asigning value to them
+
+
+
 //explicit types
-var Name;
+
+let Name : string;
 Name = "132";
-var age;
+
+let age : number;
 age = 15;
-var isAdmin;
+
+let isAdmin : boolean;
 isAdmin = false;
-var teachers = [];
+
+
+let teachers : string[] = [];
 teachers.push("Eslami");
-var counts = [];
+let counts : number[] = [];
 counts.push(1);
 //explicit types
+
+
 //union types
-var mixed = [];
+
+let mixed : (string|number|{ name: string }|boolean|object)[] = [];
 mixed.push({ name: "armin" });
 mixed.push(15);
 mixed.push("rrr");
 mixed.push(false);
 mixed.push(["armin", "reza", 5]);
 console.log(mixed);
-var counter;
+
+
+let counter : number|string;
 counter = 5;
 counter = "5";
 console.log(counter);
+
 //union types
+
 // explicit type in object
+
 //explicit type in object with allow array
-var you;
+
+let you : object;
 you = [];
+
 //explicit type in object with allow array
+
+
 //explicit type in object with specifc
-var me;
+
+let me: {
+  name: string,
+  family: string,
+  age: number,
+  isAdmin: boolean,
+}
+
+
 me = {
-    name: "armin",
-    family: "bakhshi",
-    age: 18,
-    isAdmin: true
-};
+  name: "armin",
+  family: "bakhshi",
+  age: 18,
+  isAdmin: true,
+}
 console.log(me);
+
 //explicit type in object with specifc
+
 // explicit type in object
+
+
 //any type
-var admin;
+
+let admin: any;
+
 admin = 17;
 admin = "armin";
 admin = true;
 admin = [17, "armin", true];
-admin = { name: "armin", age: 17 };
+admin = { name: "armin", age: 17 }
+
 //any in array
-var animals = [];
+
+let animals: any[] = [];
+
 animals.push(5);
 animals.push("zabra");
 animals.push(true);
-animals.push({ name: 'zebra', age: 5 });
+animals.push({name: 'zebra', age: 5});
+
+
 //any in array
+
 //any in object
-var zebra;
+
+let zebra: {
+  name: any,
+  age: any,
+}
+
 zebra = {
-    name: "zebra",
-    age: 5
-};
+  name:"zebra",
+  age: 5,
+}
+
 zebra = {
-    name: 5,
-    age: "zebra"
-};
+  name: 5,
+  age: "zebra",
+}
+
 console.log(zebra);
+
 //any in object
+
+
 //any type
+
+console.log("tsconfig.json")

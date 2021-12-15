@@ -157,4 +157,29 @@ const getPerson = (person) => {
 };
 getPerson({ name: "armin", age: 15 });
 getPerson({ name: "armin", age: 15, isAdmin: true });
+let getUser;
+getUser = ({ name, family, isAdmin }) => {
+    console.log(`${name} ${family} is logged in. ${isAdmin ? "he is admin" : "he is not admin"}`);
+};
+getUser = (user) => {
+    console.log(`${user.name} ${user.family} is logged in. ${user.isAdmin ? "he is admin" : "he is not admin"}`);
+};
+getUser({ name: "armin", family: "bakhshi", isAdmin: true });
+let calculator;
+calculator = (numOne, numTwo, action) => {
+    console.log(action);
+    if (action === "add")
+        return numOne + numTwo;
+    else
+        return numOne - numTwo;
+};
+calculator = (numOne, numTwo, action = "add") => {
+    console.log(action);
+    if (action === "add")
+        return numOne + numTwo;
+    else
+        return numOne - numTwo;
+};
+calculator(15, 5);
+//function signature
 //function and function type

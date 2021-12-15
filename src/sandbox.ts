@@ -1,34 +1,31 @@
 //compile
-let character : string = "armin";
+let character: string = "armin";
 
 console.log(character);
 
-const inputs = document.querySelectorAll('input');
+const inputs = document.querySelectorAll("input");
 
-inputs.forEach(input => {
+inputs.forEach((input) => {
   console.log(input);
 });
 
 //compile
 
-
 //argoumant and parameters in function
-const calc = (num : number) =>{
+const calc = (num: number) => {
   return num * num;
-}
+};
 console.log(calc(5));
 //argoumant and parameters in function
 
-
 //varibales and rule for asigning value to them
-
 
 let students = ["armin", "matin", "rading"];
 // students[0] = 0;
 students[0] = "reza";
 students.push("mamd");
 
-let numbers = [20 ,17, 15, 19];
+let numbers = [20, 17, 15, 19];
 numbers.push(10);
 
 let mixArray = [0, "mnamda", { name: "armin" }, false];
@@ -41,19 +38,19 @@ let person = {
   name: "ali",
   age: 14,
   family: "zandi",
-}
+};
 
 person.name = "sadegh";
 // person.name = 15;
 person.age = 16;
-// person.age = "adf" 
+// person.age = "adf"
 // person.skill = ["react", "vue"];
 
 person = {
   name: "reza",
   age: 20,
-  family: "rahimi"
-}
+  family: "rahimi",
+};
 
 // person = {
 //   name: "reza",
@@ -75,30 +72,26 @@ person = {
 
 //varibales and rule for asigning value to them
 
-
-
 //explicit types
 
-let Name : string;
+let Name: string;
 Name = "132";
 
-let age : number;
+let age: number;
 age = 15;
 
-let isAdmin : boolean;
+let isAdmin: boolean;
 isAdmin = false;
 
-
-let teachers : string[] = [];
+let teachers: string[] = [];
 teachers.push("Eslami");
-let counts : number[] = [];
+let counts: number[] = [];
 counts.push(1);
 //explicit types
 
-
 //union types
 
-let mixed : (string|number|{ name: string }|boolean|object)[] = [];
+let mixed: (string | number | { name: string } | boolean | object)[] = [];
 mixed.push({ name: "armin" });
 mixed.push(15);
 mixed.push("rrr");
@@ -106,8 +99,7 @@ mixed.push(false);
 mixed.push(["armin", "reza", 5]);
 console.log(mixed);
 
-
-let counter : number|string;
+let counter: number | string;
 counter = 5;
 counter = "5";
 console.log(counter);
@@ -118,34 +110,31 @@ console.log(counter);
 
 //explicit type in object with allow array
 
-let you : object;
+let you: object;
 you = [];
 
 //explicit type in object with allow array
 
-
 //explicit type in object with specifc
 
 let me: {
-  name: string,
-  family: string,
-  age: number,
-  isAdmin: boolean,
-}
-
+  name: string;
+  family: string;
+  age: number;
+  isAdmin: boolean;
+};
 
 me = {
   name: "armin",
   family: "bakhshi",
   age: 18,
   isAdmin: true,
-}
+};
 console.log(me);
 
 //explicit type in object with specifc
 
 // explicit type in object
-
 
 //any type
 
@@ -155,7 +144,7 @@ admin = 17;
 admin = "armin";
 admin = true;
 admin = [17, "armin", true];
-admin = { name: "armin", age: 17 }
+admin = { name: "armin", age: 17 };
 
 //any in array
 
@@ -164,44 +153,38 @@ let animals: any[] = [];
 animals.push(5);
 animals.push("zabra");
 animals.push(true);
-animals.push({name: 'zebra', age: 5});
-
+animals.push({ name: "zebra", age: 5 });
 
 //any in array
 
 //any in object
 
 let zebra: {
-  name: any,
-  age: any,
-}
+  name: any;
+  age: any;
+};
 
 zebra = {
-  name:"zebra",
+  name: "zebra",
   age: 5,
-}
+};
 
 zebra = {
   name: 5,
   age: "zebra",
-}
+};
 
 console.log(zebra);
 
 //any in object
 
-
 //any type
 
 console.log("tsconfig.json");
 
-
 //function and function type
 
-
-let plus = () =>{
-
-}
+let plus = () => {};
 
 // plus = "string";
 
@@ -211,14 +194,13 @@ let fun: Function;
 //number type
 
 //optional parameter
-const calculate = ( a: number, b:number, c?:number | string) : number => {
+const calculate = (a: number, b: number, c?: number | string): number => {
   console.log(c);
   return a + b;
 };
 //optional parameter
 
-
-let result = calculate(10, 5, "hello")
+let result = calculate(10, 5, "hello");
 //number type
 
 // result = "rsd";
@@ -227,13 +209,33 @@ result = 14;
 //void type
 
 //default parameter
-const minus = ( a: number, b:number, c:number | string = "number is not exist") : void => {
+const minus = (
+  a: number,
+  b: number,
+  c: number | string = "number is not exist"
+): void => {
   console.log(c);
   console.log(a - b);
 };
 //default parameter
 
-minus(10, 6,"found");
+minus(10, 6, "found");
 //void type
+
+type stringAndNum = string | number;
+
+type objPerson = { name: string; age: number | string; isAdmin?: boolean };
+
+type stuArray = (string | number)[];
+
+const getPerson = (person: objPerson): void => {
+  if (person.isAdmin) {
+    console.log(person);
+    return;
+  }
+  console.log({...person, isAdmin: false})
+};
+getPerson({ name: "armin", age: 15 });
+getPerson({ name: "armin", age: 15, isAdmin: true });
 
 //function and function type

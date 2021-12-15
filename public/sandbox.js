@@ -2,8 +2,8 @@
 //compile
 let character = "armin";
 console.log(character);
-const inputs = document.querySelectorAll('input');
-inputs.forEach(input => {
+const inputs = document.querySelectorAll("input");
+inputs.forEach((input) => {
     console.log(input);
 });
 //compile
@@ -32,12 +32,12 @@ let person = {
 person.name = "sadegh";
 // person.name = 15;
 person.age = 16;
-// person.age = "adf" 
+// person.age = "adf"
 // person.skill = ["react", "vue"];
 person = {
     name: "reza",
     age: 20,
-    family: "rahimi"
+    family: "rahimi",
 };
 // person = {
 //   name: "reza",
@@ -108,7 +108,7 @@ let animals = [];
 animals.push(5);
 animals.push("zabra");
 animals.push(true);
-animals.push({ name: 'zebra', age: 5 });
+animals.push({ name: "zebra", age: 5 });
 //any in array
 //any in object
 let zebra;
@@ -125,8 +125,7 @@ console.log(zebra);
 //any type
 console.log("tsconfig.json");
 //function and function type
-let plus = () => {
-};
+let plus = () => { };
 // plus = "string";
 let fun;
 // fun = "sfdsf";
@@ -149,5 +148,13 @@ const minus = (a, b, c = "number is not exist") => {
 };
 //default parameter
 minus(10, 6, "found");
-//void type
+const getPerson = (person) => {
+    if (person.isAdmin) {
+        console.log(person);
+        return;
+    }
+    console.log(Object.assign(Object.assign({}, person), { isAdmin: false }));
+};
+getPerson({ name: "armin", age: 15 });
+getPerson({ name: "armin", age: 15, isAdmin: true });
 //function and function type

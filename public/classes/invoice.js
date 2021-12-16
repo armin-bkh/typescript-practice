@@ -1,4 +1,5 @@
 //module
+//interface in classes
 class Invoice {
     //    readonly client: string;
     //    private details: string;
@@ -14,8 +15,9 @@ class Invoice {
         //   this.amount = a;
     }
     format() {
-        return `${this.client} ${this.details} ${this.amount}`;
+        return `${this.client} owes $${this.amount} for ${this.details}`;
     }
 }
+//interface in classes
 export default Invoice;
 //module

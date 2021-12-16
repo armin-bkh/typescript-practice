@@ -1,4 +1,4 @@
-//module
+import Payment from "./classes/payment.js";
 import Invoice from "./classes/invoice.js";
 //module
 //DOM in typescript
@@ -14,14 +14,23 @@ const form = document.querySelector(".new-item-form");
 console.log(form.children);
 //inputs
 const type = document.querySelector("#type");
-const toform = document.querySelector("#tofrom");
+const tofrom = document.querySelector("#tofrom");
 const details = document.querySelector("#details");
 const amount = document.querySelector("#amount");
 //inputs
+//interface in classes
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log(type.value, toform.value, details.value, amount.valueAsNumber);
+    let doc;
+    if (type.value === "payment") {
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    else {
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    console.log(doc.format());
 });
+//interface in classes
 //DOM in typescript
 // classes
 //module
@@ -58,4 +67,14 @@ const checkUser = (me) => {
 };
 checkUser(me);
 //interface object
+//interface in classes
+let docOne;
+let docTwo;
+docOne = new Invoice("Armin", "for running", 500);
+docTwo = new Payment("Reza", "for driving", 1500);
+let docs = [];
+docs.push(docOne);
+docs.push(docTwo);
+console.log(docs);
+//interface in classes
 //inteface

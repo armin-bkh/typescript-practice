@@ -1,4 +1,6 @@
 //module
+import { hasFormatter } from "./interfaces/hasFormatter.js";
+import Payment from "./classes/payment.js";
 import Invoice from "./classes/invoice.js";
 //module
 
@@ -20,15 +22,22 @@ console.log(form.children);
 
 //inputs
 const type = document.querySelector("#type") as HTMLSelectElement;
-const toform = document.querySelector("#tofrom") as HTMLInputElement;
+const tofrom = document.querySelector("#tofrom") as HTMLInputElement;
 const details = document.querySelector("#details") as HTMLInputElement;
 const amount = document.querySelector("#amount") as HTMLInputElement;
 //inputs
-
-form.addEventListener("submit", (e: Event) => {
+//interface in classes
+form.addEventListener("submit", (e: Event): void => {
   e.preventDefault();
-  console.log(type.value, toform.value, details.value, amount.valueAsNumber);
+  let doc: hasFormatter;
+  if(type.value === "payment"){
+    doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+  } else {
+    doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+  }
+  console.log(doc.format());
 });
+//interface in classes
 
 //DOM in typescript
 
@@ -96,6 +105,21 @@ const checkUser = (me: user) => {
 checkUser(me);
 //interface object
 
+//interface in classes
+
+let docOne: hasFormatter;
+let docTwo: hasFormatter;
+
+docOne = new Invoice("Armin", "for running", 500);
+docTwo = new Payment("Reza", "for driving", 1500);
+
+let docs: hasFormatter[] = [];
+
+docs.push(docOne);
+docs.push(docTwo);
+
+console.log(docs);
+//interface in classes
 
 //inteface
 

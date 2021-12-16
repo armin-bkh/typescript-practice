@@ -23,17 +23,34 @@ form.addEventListener("submit", (e) => {
 //DOM in typescript
 // classes
 class Invoice {
-    constructor(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    //    readonly client: string;
+    //    private details: string;
+    //    public amount: number;
+    constructor(
+    //   c: string, d: string, a: number
+    client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
+        //   this.client = c;
+        //   this.details = d;
+        //   this.amount = a;
     }
     format() {
         return `${this.client} ${this.details} ${this.amount}`;
     }
 }
-// classes
 const invOne = new Invoice("armin", "is a front-end developer", 50);
+const invTwo = new Invoice("Reza", "is a back-end developer", 55);
 console.log(invOne.format());
 invOne.amount = 20;
 console.log(invOne);
+let invArr = [];
+invArr.push(invOne);
+invArr.push(invTwo);
+console.log(invArr);
+invArr.forEach((inv) => {
+    // inv.amount = 0;
+    console.log(inv.client, inv.amount, inv.format());
+});
+// classes

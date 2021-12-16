@@ -37,5 +37,25 @@ console.log(invArr);
 invArr.forEach((inv) => {
     console.log(inv.client, inv.amount, inv.format());
 });
-//module
-// classes
+//interface object
+let me = {
+    name: "armin",
+    family: "bakhshi",
+    isAdmin: true,
+    password: "1365a1365b",
+    email: "arminbkh0921@yahoo.com",
+    buyed(name, count) {
+        console.log(`${name} buyed a ticket by ${count}$`);
+        return count;
+    },
+    noop: (name) => {
+        console.log(`${name} didn't buy nothing`);
+    }
+};
+const checkUser = (me) => {
+    console.log(`hello ${me.family}`);
+    me.buyed(me.name, 2000);
+};
+checkUser(me);
+//interface object
+//inteface

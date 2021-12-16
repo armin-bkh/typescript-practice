@@ -57,3 +57,45 @@ invArr.forEach((inv) => {
 //module
 
 // classes
+
+
+//inteface
+
+interface user {
+    name: string;
+    family: string;
+    isAdmin: boolean;
+    password: string;
+    email: string;
+    buyed(name: string, count: number): number;
+    noop: (name: string) => void;
+}
+
+//interface object
+
+let me: user = {
+    name: "armin",
+    family: "bakhshi",
+    isAdmin: true,
+    password: "1365a1365b",
+    email: "arminbkh0921@yahoo.com",
+    buyed(name: string, count: number): number{
+        console.log(`${name} buyed a ticket by ${count}$`)
+        return count;
+    },
+    noop: (name: string): void => {
+        console.log(`${name} didn't buy nothing`)
+    }
+};
+
+const checkUser = (me: user) => {
+    console.log(`hello ${me.family}`)
+    me.buyed(me.name, 2000);
+}
+
+checkUser(me);
+//interface object
+
+
+//inteface
+

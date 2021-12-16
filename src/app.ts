@@ -27,3 +27,32 @@ form.addEventListener("submit", (e: Event) => {
 });
 
 //DOM in typescript
+
+// classes
+
+class Invoice {
+   client: string;
+   details: string;
+   amount: number;
+   constructor(c: string, d: string, a: number){
+    this.client = c;
+    this.details = d;
+    this.amount = a;
+   }
+   
+   format(){
+       return `${this.client} ${this.details} ${this.amount}`
+   }
+
+}
+
+// classes
+
+
+const invOne = new Invoice("armin", "is a front-end developer", 50);
+
+console.log(invOne.format());
+
+invOne.amount = 20;
+
+console.log(invOne)

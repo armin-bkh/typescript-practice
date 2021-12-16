@@ -21,3 +21,19 @@ form.addEventListener("submit", (e) => {
     console.log(type.value, toform.value, details.value, amount.valueAsNumber);
 });
 //DOM in typescript
+// classes
+class Invoice {
+    constructor(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    format() {
+        return `${this.client} ${this.details} ${this.amount}`;
+    }
+}
+// classes
+const invOne = new Invoice("armin", "is a front-end developer", 50);
+console.log(invOne.format());
+invOne.amount = 20;
+console.log(invOne);

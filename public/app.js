@@ -106,11 +106,28 @@ const loginUser = (obj) => {
 };
 const user = loginUser({ name: "armin", age: 18, isAdmin: false });
 console.log(user.uid);
-const armin = {
+//generic in function
+// generic in interface
+//enum type
+var genderType;
+(function (genderType) {
+    genderType[genderType["MALE"] = 0] = "MALE";
+    genderType[genderType["FEMALE"] = 1] = "FEMALE";
+})(genderType || (genderType = {}));
+;
+const userOne = {
     name: "amrin",
     age: 17,
+    gender: genderType.MALE,
     favorite: ["programming", "design", "football"],
 };
-console.log(armin.favorite);
+const userTwo = {
+    name: "sahar",
+    age: 15,
+    gender: genderType.FEMALE,
+    favorite: "music"
+};
+console.log(userOne, userTwo);
+//enum type
 // generic in interface
 //generics

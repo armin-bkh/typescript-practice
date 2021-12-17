@@ -151,19 +151,31 @@ console.log(user.uid);
 
 // generic in interface
 
+//enum type
+enum genderType { MALE, FEMALE };
 interface person<T> {
   name: string; 
   age: number;
+  gender: genderType;
   favorite: T;
 }
 
-const armin: person<string|string[]|null> = {
+const userOne: person<string|string[]|null> = {
   name: "amrin",
   age: 17,
+  gender: genderType.MALE,
   favorite: ["programming", "design", "football"],
 }
 
-console.log(armin.favorite);
+const userTwo: person<string|string[]|null> = {
+  name: "sahar",
+  age: 15,
+  gender: genderType.FEMALE,
+  favorite: "music"
+}
+
+console.log(userOne, userTwo);
+//enum type
 
 
 // generic in interface

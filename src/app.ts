@@ -32,13 +32,15 @@ const listTemplate =  new ListTemplate(list);
 //interface in classes
 form.addEventListener("submit", (e: Event): void => {
   e.preventDefault();
+  let values: [string, string, number] = [tofrom.value, details.value, amount.valueAsNumber];
   let doc: hasFormatter;
   if(type.value === "payment"){
-    doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    doc = new Payment(...values);
   } else {
-    doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    doc = new Invoice(...values);
   }
-  listTemplate.render(doc, type.value, "end");
+  let listValues: [hasFormatter, string, 'start' | "end"] = [doc, type.value, "end"];
+  listTemplate.render(...listValues);
 });
 //interface in classes
 
@@ -138,46 +140,56 @@ form.addEventListener("submit", (e: Event): void => {
 //   return { ...obj, uid }
 // };
 
-const loginUser = <T extends {name: string}>(obj: T) => {
-  const uid = Math.floor(Math.random() * 101);
-  return { ...obj, uid }
-};
+// const loginUser = <T extends {name: string}>(obj: T) => {
+//   const uid = Math.floor(Math.random() * 101);
+//   return { ...obj, uid }
+// };
 
-const user = loginUser({ name: "armin", age: 18, isAdmin: false })
+// const user = loginUser({ name: "armin", age: 18, isAdmin: false })
 
-console.log(user.uid);
+// console.log(user.uid);
 //generic in function
 
 
 // generic in interface
 
 //enum type
-enum genderType { MALE, FEMALE };
-interface person<T> {
-  name: string; 
-  age: number;
-  gender: genderType;
-  favorite: T;
-}
+// enum genderType { MALE, FEMALE };
+// interface person<T> {
+//   name: string; 
+//   age: number;
+//   gender: genderType;
+//   favorite: T;
+// }
 
-const userOne: person<string|string[]|null> = {
-  name: "amrin",
-  age: 17,
-  gender: genderType.MALE,
-  favorite: ["programming", "design", "football"],
-}
+// const userOne: person<string|string[]|null> = {
+//   name: "amrin",
+//   age: 17,
+//   gender: genderType.MALE,
+//   favorite: ["programming", "design", "football"],
+// }
 
-const userTwo: person<string|string[]|null> = {
-  name: "sahar",
-  age: 15,
-  gender: genderType.FEMALE,
-  favorite: "music"
-}
+// const userTwo: person<string|string[]|null> = {
+//   name: "sahar",
+//   age: 15,
+//   gender: genderType.FEMALE,
+//   favorite: "music"
+// }
 
-console.log(userOne, userTwo);
+// console.log(userOne, userTwo);
 //enum type
 
 
 // generic in interface
 
 //generics
+
+
+//tuple types
+
+// let arr: [string, string, number] = ["ar", "ba", 2];
+
+// console.log(...arr);
+
+
+//tuple types

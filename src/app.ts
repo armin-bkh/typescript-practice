@@ -127,3 +127,45 @@ form.addEventListener("submit", (e: Event): void => {
 //inteface
 
 // console.log("hello mac")
+
+
+//generics
+
+
+//generic in function
+// const loginUser = <T extends object>(obj: T) => {
+//   const uid = Math.floor(Math.random() * 101);
+//   return { ...obj, uid }
+// };
+
+const loginUser = <T extends {name: string}>(obj: T) => {
+  const uid = Math.floor(Math.random() * 101);
+  return { ...obj, uid }
+};
+
+const user = loginUser({ name: "armin", age: 18, isAdmin: false })
+
+console.log(user.uid);
+//generic in function
+
+
+// generic in interface
+
+interface person<T> {
+  name: string; 
+  age: number;
+  favorite: T;
+}
+
+const armin: person<string|string[]|null> = {
+  name: "amrin",
+  age: 17,
+  favorite: ["programming", "design", "football"],
+}
+
+console.log(armin.favorite);
+
+
+// generic in interface
+
+//generics

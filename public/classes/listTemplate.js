@@ -1,3 +1,4 @@
+//rendering and html element in to the DOM
 class ListTemplate {
     constructor(containter) {
         this.containter = containter;
@@ -17,3 +18,4 @@ class ListTemplate {
     }
 }
 export default ListTemplate;
+//rendering and html element in to the DOM

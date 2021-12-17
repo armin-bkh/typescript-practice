@@ -1,5 +1,6 @@
 import { hasFormatter } from "../interfaces/hasFormatter";
 
+//rendering and html element in to the DOM
 class ListTemplate {
     constructor(private containter: HTMLUListElement){}
 
@@ -20,3 +21,5 @@ class ListTemplate {
 }
 
 export default ListTemplate;
+
+//rendering and html element in to the DOM
